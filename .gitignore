@@ -1,8 +1,0 @@
-/.venv
-/Dataset-trafo
-/images_fastapi
-/model_parameters
-/Steel-defect-detector
-/Streamlit_data
-__pycache__/
-*.pyc
