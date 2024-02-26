@@ -1,6 +1,5 @@
 /.venv
 /Dataset-trafo
 /images_fastapi
-/model_parameters
-__pycache__/
-*.pyc
+/old
+/Streamlit_data

@@ -1,0 +1,4 @@
+# Ignore VENV
+.venv
+tests
+old

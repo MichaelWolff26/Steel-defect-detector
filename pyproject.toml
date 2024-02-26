@@ -13,10 +13,23 @@ torchvision = {version = "^0.17.0+cu118", source = "pytorch"}
 matplotlib = "^3.8.3"
 pandas = "^2.2.0"
 scikit-learn = "^1.4.1.post1"
+ipykernel = "^6.29.2"
+torchinfo = "^1.8.0"
+pyarrow = "^15.0.0"
+streamlit = "^1.31.1"
+fastapi = "^0.109.2"
+uvicorn = "^0.27.1"
+opencv-python = "^4.9.0.80"
 
 
 [[tool.poetry.source]]
 name = "pytorch"
+url = "https://download.pytorch.org/whl/cu118"
+priority = "explicit"
+
+
+[[tool.poetry.source]]
+name = "pytorch-gpu-src"
 url = "https://download.pytorch.org/whl/cu118"
 priority = "explicit"
 

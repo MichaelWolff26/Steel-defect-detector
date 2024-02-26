@@ -1,5 +1,4 @@
 from fastapi import FastAPI,UploadFile, File
-import uvicorn
 import os 
 import torchvision
 import torch
@@ -10,11 +9,13 @@ def hello():
     return {"API":"API is working fine"}
 
 @app.post("/upload_image")
-async def upload_image(img_file:UploadFile =File(...)):
+async def upload_image(filename:str,img_file:UploadFile =File(...)):
     class_var=0
     class_str="unsucessful" 
+    class_str=filename
 
-    if '.jpg' in img_file.filename or '.jpeg' in img_file.filename or '.png' in img_file.filename:
+    if '.jpg' in filename or '.jpeg' in filename or '.png' in filename:
+        class_str="passed0" 
         file_save_path="./images_fastapi/"+img_file.filename
         if os.path.exists("./images_fastapi") == False:
             os.makedirs("./images_fastapi")
@@ -30,22 +31,12 @@ async def upload_image(img_file:UploadFile =File(...)):
 
 
         model=torchvision.models.resnet.ResNet(torchvision.models.resnet.BasicBlock, [2, 2, 2, 2],num_classes=2)
-        path_mp=os.getcwd()+"\\model_parameters\\model.md"
+        path_mp=os.getcwd()+"/model_parameters/model.md"
         model=torch.load(path_mp)
         pred=model(norm_img_2)
         class_var=torch.argmax(pred, dim=1)
-        
+        class_str=int(class_var)
 
-
-        if int(class_var)==0:
-            class_str="Surface Quality OK"
-        elif int(class_var)==1:
-            class_str="Surface Quality NOT OK"
-        else:
-            class_str="Model-Error"
-    
-            
-        
         os.remove("./images_fastapi/"+img_file.filename)
     
     return class_str
