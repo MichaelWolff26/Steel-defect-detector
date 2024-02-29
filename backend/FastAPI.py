@@ -1,5 +1,5 @@
 from fastapi import FastAPI,UploadFile, File
-import os 
+import os
 import torchvision
 import torch
 app = FastAPI()
@@ -11,11 +11,11 @@ def hello():
 @app.post("/upload_image")
 async def upload_image(filename:str,img_file:UploadFile =File(...)):
     class_var=0
-    class_str="unsucessful" 
+    class_str="unsucessful"
     class_str=filename
 
     if '.jpg' in filename or '.jpeg' in filename or '.png' in filename:
-        class_str="passed0" 
+        class_str="passed0"
         file_save_path="./images_fastapi/"+img_file.filename
         if os.path.exists("./images_fastapi") == False:
             os.makedirs("./images_fastapi")
