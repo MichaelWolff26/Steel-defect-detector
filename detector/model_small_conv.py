@@ -1,5 +1,6 @@
 # Manual small Conv Network with one residual connection for first testing
 import torch.nn as nn
+
 class conv_network(nn.Module):
     def __init__(self):
         super(conv_network,self).__init__()
@@ -21,7 +22,7 @@ class conv_network(nn.Module):
         X=nn.functional.relu(X)
         X=self.max_pool(X)
         X=nn.functional.relu(X)
-        X=torch.flatten(X,1)
+        X=nn.Flatten()(X)
         X=self.dense1(X)
         X=nn.functional.relu(X)
         X=self.drop_out(X)

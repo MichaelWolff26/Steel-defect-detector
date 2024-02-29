@@ -2475,21 +2475,21 @@ files = [
 
 [[package]]
 name = "torch"
-version = "2.2.0+cu118"
+version = "2.2.1+cu118"
 description = "Tensors and Dynamic neural networks in Python with strong GPU acceleration"
 optional = false
 python-versions = ">=3.8.0"
 files = [
-    {file = "torch-2.2.0+cu118-cp310-cp310-linux_x86_64.whl", hash = "sha256:4377e0a7fe8ff8ffc4f7c9c6130c1dcd3874050ae4fc28b7ff1d35234fbca423"},
-    {file = "torch-2.2.0+cu118-cp310-cp310-win_amd64.whl", hash = "sha256:fa305dc0e5a20d450cd4d288c7f5045ce788f9c65e0f7a159477f9d835f18c9b"},
-    {file = "torch-2.2.0+cu118-cp311-cp311-linux_x86_64.whl", hash = "sha256:01f947d4dbae6631f33040521c2a7c32fd835d67d190083db154c54e53d6e34f"},
-    {file = "torch-2.2.0+cu118-cp311-cp311-win_amd64.whl", hash = "sha256:a8eda58ee69e6b0eeab2c25674da6a99d8bbf1e6bf4fda96761f953031097b08"},
-    {file = "torch-2.2.0+cu118-cp312-cp312-linux_x86_64.whl", hash = "sha256:e46a40d6a1055a4a4ee8c8ac5a8dfb2c70b7382a00c411b0e9f2c86029b6efc4"},
-    {file = "torch-2.2.0+cu118-cp312-cp312-win_amd64.whl", hash = "sha256:183b17fced6d344cd93a385a0c5f98e3f31abd254b0aed4741e921115d8de7a8"},
-    {file = "torch-2.2.0+cu118-cp38-cp38-linux_x86_64.whl", hash = "sha256:d586b01aaa4ba15ffc3892b87d44803a1138d6372a6eea4d0290ef68f9c809cb"},
-    {file = "torch-2.2.0+cu118-cp38-cp38-win_amd64.whl", hash = "sha256:71801c8c77d2d42f81b220fa15769d4ba48f8f977ca89e7ba928af0c33bcdce3"},
-    {file = "torch-2.2.0+cu118-cp39-cp39-linux_x86_64.whl", hash = "sha256:565c16fb26b035f3845a019732d292d7a167ef15b9732dc8e26ba32dc163436d"},
-    {file = "torch-2.2.0+cu118-cp39-cp39-win_amd64.whl", hash = "sha256:796ce23ee21da57157f10baee7ee5244c6cddb13186408b7bdd9b5f8dea2ae19"},
+    {file = "torch-2.2.1+cu118-cp310-cp310-linux_x86_64.whl", hash = "sha256:438668ad1eec3a7d1a0473ebf8b60f4557e51548d6be0497d32cc6c3a26a1945"},
+    {file = "torch-2.2.1+cu118-cp310-cp310-win_amd64.whl", hash = "sha256:3d9015aa52ca11153c8be75901c3c2dffd4d239354aaa7f09a625f09be88be5a"},
+    {file = "torch-2.2.1+cu118-cp311-cp311-linux_x86_64.whl", hash = "sha256:84328a35621cc6a67a182a327baaab67e5f5869981c4b1677ed05f92c15cceb1"},
+    {file = "torch-2.2.1+cu118-cp311-cp311-win_amd64.whl", hash = "sha256:2a839d197bb07a9926849823c30d5332215c072977e5d90d6d4523ffa75cdedf"},
+    {file = "torch-2.2.1+cu118-cp312-cp312-linux_x86_64.whl", hash = "sha256:3edd204c8536fb753cffa3e684fd971297c093b63520395ec04c1b88bc8664d0"},
+    {file = "torch-2.2.1+cu118-cp312-cp312-win_amd64.whl", hash = "sha256:7bcca8724f23901e4b2cd251fab1508e5855f1e52ae73259a177cfd96a647fe3"},
+    {file = "torch-2.2.1+cu118-cp38-cp38-linux_x86_64.whl", hash = "sha256:d1b7dd92dd7c27f03ac80f8805459d90ae836f0c207e6a22f12618a64591c1c5"},
+    {file = "torch-2.2.1+cu118-cp38-cp38-win_amd64.whl", hash = "sha256:4376d5cdb022e654fa7dcb8ac4ef29950cdc1f3298ed8ed207935e9f7cc6dcdd"},
+    {file = "torch-2.2.1+cu118-cp39-cp39-linux_x86_64.whl", hash = "sha256:88d6d522aae221439b5c591d9039a4e570a250fd81352ba6171af580aabe43ac"},
+    {file = "torch-2.2.1+cu118-cp39-cp39-win_amd64.whl", hash = "sha256:c61a90d1078c8057093be289bc2827bb5d4e7059840bf0066e7b72aa7c3cee02"},
 ]
 
 [package.dependencies]
@@ -2509,7 +2509,7 @@ nvidia-cusparse-cu11 = {version = "11.7.5.86", markers = "platform_system == \"L
 nvidia-nccl-cu11 = {version = "2.19.3", markers = "platform_system == \"Linux\" and platform_machine == \"x86_64\""}
 nvidia-nvtx-cu11 = {version = "11.8.86", markers = "platform_system == \"Linux\" and platform_machine == \"x86_64\""}
 sympy = "*"
-triton = {version = "2.2.0", markers = "platform_system == \"Linux\" and platform_machine == \"x86_64\""}
+triton = {version = "2.2.0", markers = "platform_system == \"Linux\" and platform_machine == \"x86_64\" and python_version < \"3.12\""}
 typing-extensions = ">=4.8.0"
 
 [package.extras]
@@ -2520,6 +2520,33 @@ optree = ["optree (>=0.9.1)"]
 type = "legacy"
 url = "https://download.pytorch.org/whl/cu118"
 reference = "pytorch"
+
+[[package]]
+name = "torchaudio"
+version = "2.2.1+cu118"
+description = "An audio package for PyTorch"
+optional = false
+python-versions = "*"
+files = [
+    {file = "torchaudio-2.2.1+cu118-cp310-cp310-linux_x86_64.whl", hash = "sha256:734db8030b3c5ff6bb4135b0d0a9eec79690900c5b5edd259f230b02d6fbcb04"},
+    {file = "torchaudio-2.2.1+cu118-cp310-cp310-win_amd64.whl", hash = "sha256:c8770444c1bcda72d4a8a66bdae0b06abb103becaa99b884e7dd91a20ac420eb"},
+    {file = "torchaudio-2.2.1+cu118-cp311-cp311-linux_x86_64.whl", hash = "sha256:cd3b1c3582b17792c6d7a367dea0459b123e54d7a4242809ea87ccc10fa220e5"},
+    {file = "torchaudio-2.2.1+cu118-cp311-cp311-win_amd64.whl", hash = "sha256:aeb2051bcafb2ed76bc3e36911d0865dd39900cfeed3d56c2d6f5882e4d8a6bf"},
+    {file = "torchaudio-2.2.1+cu118-cp312-cp312-linux_x86_64.whl", hash = "sha256:70200e1d223804ad4bde87ff5d86fb2b4e2b3efb8d90e18479c9104f38d22f05"},
+    {file = "torchaudio-2.2.1+cu118-cp312-cp312-win_amd64.whl", hash = "sha256:8e8c38b19b8dacdfbcbd3aa4634f0c680972ffa0ab82dd59187f8ed04fda5191"},
+    {file = "torchaudio-2.2.1+cu118-cp38-cp38-linux_x86_64.whl", hash = "sha256:10d175908ef9311142823f847d6deeebd3e228e699e9fcf3e0ec0dc802cf0650"},
+    {file = "torchaudio-2.2.1+cu118-cp38-cp38-win_amd64.whl", hash = "sha256:8b3475cfc573b95f1d47ea60df88f28d10fd290bf9a00bad2d67710025d522d5"},
+    {file = "torchaudio-2.2.1+cu118-cp39-cp39-linux_x86_64.whl", hash = "sha256:4ad430bc43166f80c582fa4c8af50f348e22042b3b264a76defab4832be811e7"},
+    {file = "torchaudio-2.2.1+cu118-cp39-cp39-win_amd64.whl", hash = "sha256:36644dfc1a04cef384225f174c6ed970b32fd41befa196f77631194bb915fd3c"},
+]
+
+[package.dependencies]
+torch = "2.2.1"
+
+[package.source]
+type = "legacy"
+url = "https://download.pytorch.org/whl/cu118"
+reference = "pytorch-gpu-src"
 
 [[package]]
 name = "torchinfo"
@@ -2534,28 +2561,27 @@ files = [
 
 [[package]]
 name = "torchvision"
-version = "0.17.0+cu118"
+version = "0.17.1+cu118"
 description = "image and video datasets and models for torch deep learning"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "torchvision-0.17.0+cu118-cp310-cp310-linux_x86_64.whl", hash = "sha256:2e63d62e09d9b48b407d3e1b30eb8ae4e3abad6968e8d33093b60d0657542428"},
-    {file = "torchvision-0.17.0+cu118-cp310-cp310-win_amd64.whl", hash = "sha256:739fb1cedfad4a62f82306c6d819046c6bfa8825857784c7565636d4b92ea104"},
-    {file = "torchvision-0.17.0+cu118-cp311-cp311-linux_x86_64.whl", hash = "sha256:91daefe5523a2052fcb0bd650e12e7037ce7ae51296edd75291cb65ac066808b"},
-    {file = "torchvision-0.17.0+cu118-cp311-cp311-win_amd64.whl", hash = "sha256:af7762d6371187590b1928cb666a6deb609261006d47444a440070775f0769c1"},
-    {file = "torchvision-0.17.0+cu118-cp312-cp312-linux_x86_64.whl", hash = "sha256:b8190f351cd095ca72de9805fc8bd92a52d65c5833c958f40bd1a98981fe77cf"},
-    {file = "torchvision-0.17.0+cu118-cp312-cp312-win_amd64.whl", hash = "sha256:2fb781e00a5b249b94239dcfbec7047e424b4de7b87b8f5b765929e2178f7961"},
-    {file = "torchvision-0.17.0+cu118-cp38-cp38-linux_x86_64.whl", hash = "sha256:2cd9bad00894760edfd486445bcf824411cd03c8ab3dbea5d8b69dd8fdb4aaee"},
-    {file = "torchvision-0.17.0+cu118-cp38-cp38-win_amd64.whl", hash = "sha256:8399e5ef78bf7e69078ec9c1e9d39499baec7441b2a9bacfce0c95318700e59d"},
-    {file = "torchvision-0.17.0+cu118-cp39-cp39-linux_x86_64.whl", hash = "sha256:330d9e845409ec11fe04524b0ecf180d431178ea23f5d8f02929e940e2eeeb4d"},
-    {file = "torchvision-0.17.0+cu118-cp39-cp39-win_amd64.whl", hash = "sha256:b41db55124ce925ace72e2b465250b9f395b8f921ea0568b7158efb999aba5d3"},
+    {file = "torchvision-0.17.1+cu118-cp310-cp310-linux_x86_64.whl", hash = "sha256:dfe27be6328d85300ba9c2f3862993841c41a0daa4b4ba99c22e9fd509a21e2f"},
+    {file = "torchvision-0.17.1+cu118-cp310-cp310-win_amd64.whl", hash = "sha256:6fd0cdf4d30fd84e4600788b76a2df6d980824bba5710fee9967584c2388542e"},
+    {file = "torchvision-0.17.1+cu118-cp311-cp311-linux_x86_64.whl", hash = "sha256:4b74d3a38c3515f9721b502a1dafa05314a6dd6055d6e1b1f289fbae0809e0a1"},
+    {file = "torchvision-0.17.1+cu118-cp311-cp311-win_amd64.whl", hash = "sha256:3625786d032bdc091579c4ea03d372fdd33503adebd3e036e0a49f21087e17a4"},
+    {file = "torchvision-0.17.1+cu118-cp312-cp312-linux_x86_64.whl", hash = "sha256:9e385afdc51f263bb65ccad1a851a70382cf001b62c2b83d7f1e2a7f2eb1fa62"},
+    {file = "torchvision-0.17.1+cu118-cp312-cp312-win_amd64.whl", hash = "sha256:23495b4fefaa028dae8741820080c915a48cced8badfae36660f99fd26a8ea0e"},
+    {file = "torchvision-0.17.1+cu118-cp38-cp38-linux_x86_64.whl", hash = "sha256:569c552865a40c2f47776824cb269539bc9cec8228b1816d52a4bdad86f13133"},
+    {file = "torchvision-0.17.1+cu118-cp38-cp38-win_amd64.whl", hash = "sha256:1fee4242f8583997e1a3c8be9b966bfc6fad6c517d671e43c8dba3a15a0447a2"},
+    {file = "torchvision-0.17.1+cu118-cp39-cp39-linux_x86_64.whl", hash = "sha256:67931b37882bd6cfc4e8f05202748fc3362f252becd5f6199343a70f17ba0abd"},
+    {file = "torchvision-0.17.1+cu118-cp39-cp39-win_amd64.whl", hash = "sha256:b8bdebde56d425b4dfc7fa0341c68afd11dbed00b83b569fa9b6643df0701e84"},
 ]
 
 [package.dependencies]
 numpy = "*"
 pillow = ">=5.3.0,<8.3.dev0 || >=8.4.dev0"
-requests = "*"
-torch = "2.2.0"
+torch = "2.2.1"
 
 [package.extras]
 scipy = ["scipy"]
@@ -2789,4 +2815,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "dbb86818dd2d621324410a74ff2a2f19c1ab6359a4a118dbf4f99a2dac57043a"
+content-hash = "2cfe7376a77aff745f731674846e185d01cef9e6e6f7685624f2904cc36456ae"
