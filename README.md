@@ -1,0 +1,1 @@
+This is a test project for using AI to find defects in Steel surfaces
